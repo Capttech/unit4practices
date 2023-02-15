@@ -1,0 +1,14 @@
+{% extends 'base.html' %}{% block content %}
+
+<form action="{% url 'madlib' %}" method="POST">
+  {% csrf_token %} {{form.as_p}}
+
+  <button>Submit</button>
+</form>
+{% if name is not None %}
+<p>Date: {{date}}</p>
+<p>
+  Please excuse {{name}} who is far too {{adjective}} to attend {{noun}} class!
+</p>
+<p>Signed by: {{signed_by}}</p>
+{% endif %}{% endblock content %}

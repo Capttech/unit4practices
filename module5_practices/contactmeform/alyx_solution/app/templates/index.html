@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+<form action="{% url 'contact' %}" method="GET">
+  <label>
+    <p>First Name:</p>
+    <input type="text" name="first_name" required />
+  </label>
+  <label>
+    <p>Last Name:</p>
+    <input type="text" name="last_name" required />
+  </label>
+  <label>
+    <p>Email</p>
+    <input type="email" name="email" required />
+  </label>
+  <label>
+    <p>Message</p>
+    <input type="text" name="message" required />
+  </label>
+  <button>Contact Me</button>
+</form>
+
+{% if first_name is not None %}
+<h1>You have sent me a message!</h1>
+{% endif %}{% endblock content %}
